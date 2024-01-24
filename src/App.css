@@ -62,6 +62,19 @@ li .content {
   transition: .4s;
 }
 
+.front {
+  transform: perspective(200px) rotateY(0deg);
+}
+.back {
+  transform: perspective(200px) rotateY(180deg);
+}
+.flip-front {
+  transform: perspective(200px) rotateY(180deg);
+}
+.flip-back {
+  transform: perspective(200px) rotateY(0deg);
+}
+
 /* cards */
 .cards {
   margin-top: 20px;
