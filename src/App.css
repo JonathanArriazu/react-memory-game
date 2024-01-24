@@ -58,7 +58,7 @@ li .content {
   width: 100%;
   display: grid;
   place-content: center;
-  backface-visibility: hidden;
+  /* backface-visibility: hidden; */
   transition: .4s;
 }
 
