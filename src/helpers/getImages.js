@@ -1,3 +1,5 @@
+//Función para duplicar cada imagen y almacenarlas en un array dentro de una constante
+
 export const getImages = (size) => { //size determina cuantas imagenes va a mostrar en el juego
 
     const images = [
@@ -13,6 +15,7 @@ export const getImages = (size) => { //size determina cuantas imagenes va a most
         "/images/walter-white.png"
       ]
 
+      //Seleccionamos el numero de imagen segun el nivel (por cada nivel se suman 2 pares de imagenes nuevos)
       const newImages = images.slice(0, size);
     
       return newImages.flatMap(item => [`1|${item}`, `2|${item}`])
