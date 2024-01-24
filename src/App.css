@@ -83,3 +83,19 @@ li .content {
   font-size: 30px;
   margin-bottom: 30px;
 }
+
+/* timer */
+.timer {
+  margin: 20px 0;
+}
+.timer h3 {
+  font-size: 30px;
+}
+.timer h3 span {
+  font-size: 40px;
+}
+/* input */
+input.warning {
+  border: 2px solid tomato;
+
+}

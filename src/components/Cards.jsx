@@ -7,7 +7,7 @@ let size = 3;
 //Variable para calcular score
 let clicks = 0;
 
-const Cards = () => {
+const Cards = ({start}) => {
 
   const sound = "/sound/sucess.mp3"
 
@@ -21,10 +21,12 @@ const Cards = () => {
 
   //Funcion para almacenar 2 items seleccionados
   const handleClick = (item) => {
-    clicks = clicks + 1;
-    if(selected.length < 2){
-      setSelected(selected => selected.concat(item))
-    }    
+    if(start){
+      clicks = clicks + 1;
+      if(selected.length < 2){
+        setSelected(selected => selected.concat(item))
+      }    
+    }
   }
 
   //useEffect a la escucha de "selected": cuando selected tiene 2 imagenes, chequea sin ambas son iguales y en ese caso las almacena en "opened", para luego hacer un clear a "selected"
