@@ -7,14 +7,14 @@ import './index.css';
 function App() {
 
   const [start, setStart] = useState(false);
-  const [background, setBackground] = useState('/images/background1.jpg');
+  const [background, setBackground] = useState('/images/background2.jpg');
 
   const changeBackground = () => {
     if(!start){
     setBackground((prevBackground) =>
-      prevBackground === '/images/background1.jpg'
-        ? '/images/background2.jpg'
-        : '/images/background1.jpg'
+      prevBackground === '/images/background2.jpg'
+        ? '/images/background1.jpg'
+        : '/images/background2.jpg'
     );
     }
   };
