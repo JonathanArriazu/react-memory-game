@@ -24,7 +24,12 @@
 .App h1{
   color: #fff;
   text-transform: uppercase;
-  padding: 20px 0 ;
+  text-shadow: 2px 2px 1px #2893ff;
+}
+
+.App h2{
+  color: #fff;
+  text-transform: uppercase;
   text-shadow: 2px 2px 1px #2893ff;
 }
 
@@ -50,6 +55,12 @@ li .content {
   position: relative;
   width: 105px;
   height: 105px;
+}
+
+.level-and-background{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .front, .back{
@@ -94,8 +105,31 @@ li .content {
 .timer h3 span {
   font-size: 40px;
 }
-/* input */
+
+/* ranking */
+.ranking {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 2px solid #7FBFFF;
+  padding: 5px 20px;
+  border-radius: 5px;
+
+  max-height: 185px;
+  overflow: auto;
+}
+.ranking .item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 0;
+  /* background-color: #7FBFFF; */
+}
+.ranking .item:not(:last-child) {
+  border-bottom: 1px solid #7FBFFF;
+}
+.ranking .item span {
+  font-weight: 500;
+}
 input.warning {
   border: 2px solid tomato;
-
 }

@@ -7,17 +7,16 @@ let size = 3;
 //Variable para calcular score
 let clicks = 0;
 
-const Cards = ({start}) => {
+const Cards = ({start, score, level, setLevel}) => {
 
   const sound = "/sound/sucess.mp3"
 
   const [images, setImages] = useState(getImages(size));
   const [selected, setSelected] = useState([]);
   const [opened, setOpened] = useState([]);
-  const [level, setLevel] = useState(1)
 
   /* const score = useRef(0); */
-  const [score, setScore] = useState(0)
+  /* const [score, setScore] = useState(0) */
 
   //Funcion para almacenar 2 items seleccionados
   const handleClick = (item) => {
@@ -56,11 +55,11 @@ const Cards = ({start}) => {
     setOpened([]);
   }  
 
-  const  calculateScore = () => {
+  const calculateScore = () => {
     const passLevel = size *10;
     const cards = size * 2;
 
-    let total = score;
+    let total = score.current;
     
     if (clicks === cards) {
       total = total + (cards*2) + passLevel; //Para primer nivel => 42
@@ -72,7 +71,8 @@ const Cards = ({start}) => {
       total = total + Math.round(cards/3) + passLevel; //Para primer nivel => 32
     }
     clicks = 0;
-    setScore(total)
+    /* setScore(total) */
+    score.current = total;
   }
   
   
@@ -80,9 +80,8 @@ const Cards = ({start}) => {
 
 
   return (
-    <div className='cards'>
-        <h1>Nivel {level}</h1>
-        <h2>Score: {score}</h2>
+    <div className='cards'>        
+        <h2>Score: {score.current}</h2>
         <ul>
           {images.map((item, index) => (
             <li key={index} onClick={() => handleClick(item)}>
